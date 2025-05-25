@@ -142,9 +142,6 @@ async def interactive_mode() -> None:
                     continue
 
                 max_steps = int(input("\n Enter maximum number of steps the AI Agent Can do: "))
-                if max_steps > 500:
-                    print("Provide less number of steps, initiating again......")
-                    continue
                 if not task_description:
                     continue
                 
