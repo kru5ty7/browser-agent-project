@@ -1,0 +1,56 @@
+[
+  {
+    "type": "scrape",
+    "task_id": "scrape-quotes-1",
+    "url": "https://quotes.toscrape.com/",
+    "selectors": {
+      "quotes": ".quote .text",
+      "authors": ".quote .author",
+      "tags": ".quote .tags .tag"
+    },
+    "wait_for_selector": ".quote",
+    "description": "Scrape quotes from quotes.toscrape.com"
+  },
+  {
+    "type": "navigate",
+    "task_id": "nav-multiple-pages",
+    "urls": [
+      "https://quotes.toscrape.com/page/1/",
+      "https://quotes.toscrape.com/page/2/",
+      "https://quotes.toscrape.com/page/3/"
+    ],
+    "actions": [
+      {
+        "type": "wait",
+        "duration": 2
+      },
+      {
+        "type": "screenshot",
+        "filename": "quotes_page_2.png"
+      },
+      {
+        "type": "wait",
+        "duration": 1
+      }
+    ],
+    "description": "Navigate through multiple pages"
+  },
+  {
+    "type": "extract",
+    "task_id": "extract-structured-data",
+    "url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+    "extraction_prompt": "Extract the following information about Python: 1) Creator name, 2) First release date, 3) Latest stable release version, 4) Main paradigms, 5) Typing discipline",
+    "output_format": "json",
+    "description": "Extract structured data about Python from Wikipedia"
+  },
+  {
+    "type": "fill_form",
+    "task_id": "search-form",
+    "url": "https://www.google.com",
+    "form_data": {
+      "textarea[name='q']": "browser automation with AI"
+    },
+    "submit_selector": "input[type='submit']",
+    "description": "Fill and submit a search form"
+  }
+]
