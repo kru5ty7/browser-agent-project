@@ -136,7 +136,7 @@ async def interactive_mode() -> None:
                 if task_description.lower() in ['exit', 'quit', 'q']:
                     option = input("\nDo you really want to quit from the interactive mode? [Yes(y)/No(n)]")
                     if option.lower() in ('y', 'yes'):
-                        print("Exiting the interactive mode")
+                        print("Exiting the interactive mode.....")
                         break
                     print("Starting the interactive mode")
                     continue
